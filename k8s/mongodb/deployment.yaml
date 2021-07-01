@@ -1,4 +1,4 @@
-apiVesrion: aaps/v1
+apiVesrion: apps/v1
 kind: Deployment
 metadata:
   name: mongodb
