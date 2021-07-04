@@ -44,7 +44,17 @@ jobs:
             silveiraweb/rotten-potatoes:latest
             silveiraweb/rotten-potatoes:${{ github.run_number }}
             
-            
+  CD:
+   runs-on: ubuntu-latest
+   steps:
+     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+     - uses: actions/checkout@v2
+     - name: Kubernetes set context
+       uses: Azure/k8s-set-context@v1.1
+       with:
+        method: kubeconfig
+        kubeconfig: ${{ secrets.K8S_CONFIG }}
+      
             
             
             
